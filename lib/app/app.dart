@@ -1,5 +1,8 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter_application_1/views/home_view.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_application_1/views/profile_view.dart';
+
+//Root of the main app
 
 class MyApp extends StatelessWidget {
   const MyApp({
@@ -8,9 +11,13 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CupertinoApp(
-      title: "My App",
-      home: HomeView()
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+          brightness: Brightness.dark,
+          primaryColor: CupertinoColors.activeBlue,
+          fontFamily: 'Alice'),
+      home: ProfileScreen(),
     );
   }
 }
